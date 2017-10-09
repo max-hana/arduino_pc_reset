@@ -88,7 +88,7 @@ void processLine(){
       }else
       if ( 0 == strcmp(val,"*")){
         digitalWrite(pin_POWER, HIGH);
-        delay(1000); // 1
+        delay(1000); // 1. to keep portable with delay(), wait is no larger than 1 sec.
         delay(1000); // 2
         delay(1000); // 3
         delay(1000); // 4
@@ -101,6 +101,8 @@ void processLine(){
         digitalWrite(pin_POWER, LOW);
         Serial.println("OK");
       }
+    }else
+      Serial.println("NG");
     }
   }
 }

@@ -20,8 +20,12 @@ This project is about making Arduino usb key for manipulating PC's reset/power b
 
 ## protocol
 
-Send the following command on 9600bps.
+- All commands/responses are in text
+- Each command ends with either ';' or <LF>
+- Serial speed is fixed to 9600bps
 
+
+### commands
 
 - ? ...  show help"
 - set RESET=1 ...  reset on
@@ -31,8 +35,9 @@ Send the following command on 9600bps.
 - set POWER=0 ...  power off");
 - set POWER=* ...  power on for 10 sec
 
-Receive result
+'*' is not a wild card. you send it as is.
 
-- OK
+### response
 
-  
+- OK ... your command succeeded.
+- NG ... something went wrong.
