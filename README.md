@@ -17,3 +17,22 @@ This project is about making Arduino usb key for manipulating PC's reset/power b
  | ------- |:----------:| -------:|
  | D9      | OUTPUT     | RESET   |
  | D8      | OUTPUT     | POWER   |
+
+## protocol
+
+Send the following command on 9600bps.
+
+
+- ? ...  show help"
+- set RESET=1 ...  reset on
+- set RESET=0 ...  reset off
+- set RESET=* ...  reset on for 1 sec
+- set POWER=1 ...  power on");
+- set POWER=0 ...  power off");
+- set POWER=* ...  power on for 10 sec
+
+Receive result
+
+- OK
+
+  

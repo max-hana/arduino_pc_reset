@@ -15,7 +15,7 @@ void setup() {
 
   Serial.begin(9600);
 
-  
+
 }
 
 void printHelp(){
@@ -102,7 +102,7 @@ void processLine(){
         Serial.println("OK");
       }
     }
-  }  
+  }
 }
 
 int buf_i = 0;
@@ -117,13 +117,13 @@ void loop() {
   while (Serial.available()){
     char c = Serial.read();
     buf[buf_i++] = c;
-    if(buf_i >= sizeof(buf)) buf_i = 0;
+    if(buf_i >= sizeof(buf)-1) buf_i = 0;
 
     if(c == '\n' || c== ';'){ 
       buf[buf_i] = '\0';
       buf_i = 0;
       bLineDetected = true;
     }
-    
+
   }
 }
